@@ -6,7 +6,7 @@ project {
     groupId "com.sampullara.locrest"
     artifactId "server"
     packaging "war"
-    name "IPLocation"
+    name "LocREST"
     version "1.0-SNAPSHOT"
     url "http://code.google.com/p/locrest"
 
@@ -21,11 +21,21 @@ project {
     dependencies {
         dependency("com.sun.jersey", "jersey-server", "1.0.3")
         dependency("com.sun.jersey", "jersey-json", "1.0.3")
+        dependency("mysql", "mysql-connector-java", "5.1.6")
     }
 
     build {
+        finalName "v1"
         plugins {
             compiler("1.5")
+            plugin {
+                groupId "org.codehaus.mojo"
+                artifactId "tomcat-maven-plugin"
+                version "1.0-beta-1"
+                configuration {
+                  path '/v1'
+                }
+            }
         }
     }
 
