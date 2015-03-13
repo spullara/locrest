@@ -1,0 +1,1 @@
+Implemented using Jersey, this creates a REST API for the IP location database suitable for trivial deployment.
